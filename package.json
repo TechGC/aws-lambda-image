@@ -6,7 +6,7 @@
     "profile": "techgc",
     "region": "us-east-2",
     "memory": "1280",
-    "timeout": "60" // for batch image processing
+    "timeout": "60"
   },
   "scripts": {
     "postinstall": "[ -f config.json ] || cp config.json.sample config.json",
