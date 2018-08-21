@@ -17,7 +17,7 @@ lambda:
 	@mv build/${TARGET}.zip upload/
 
 uploadlambda: lambda
-	aws lambda update-function-code --function-name ${FUNCTION} --zip-file fileb://upload/${TARGET}.zip --profile techgc --region us-west-2
+	aws lambda update-function-code --function-name ${FUNCTION} --zip-file fileb://upload/${TARGET}.zip --profile techgc --region us-east-2
 
 configtest:
 	@./bin/configtest ${TARGET}
