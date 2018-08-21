@@ -1,5 +1,30 @@
 # aws-lambda-image
+## TechGC README:
+An AWS Lambda Function to resize/reduce images automatically. When an image is
+put on AWS S3 bucket, this package will resize/reduce it and put to S3.
 
+## Requirements
+
+- Node.js
+- AWS CLI (`pip install awscli --upgrade --user`)
+- AWS profile in AWS config file (~/.aws/config)
+```
+[techgc]
+aws_access_key_id=YOUR_KEY_ID
+aws_secret_access_key=YOUR_KEY_SECRET
+
+```
+- Lambda functions created & configured in AWS Oregon region (us-east-2), running Node.js **6.10**
+
+## How to
+
+Clone this repository. Configuration files for each function are stored inside `config` directory. Configuration parameters and details can be seen [here](https://github.com/TechGC/aws-lambda-image#configuration-parameters).
+
+Save changes (if any) and go to the project root. Then just run `./lambda.sh` and choose the function you need to update. Functions are sorted by the target S3 bucket folder. Script checks if configuration file is correct, then creates bundle, archives it and uploads to AWS Lambda Service.
+
+---
+
+## Original README:
 [![Build Status](https://travis-ci.org/ysugimoto/aws-lambda-image.svg?branch=master)](https://travis-ci.org/ysugimoto/aws-lambda-image)
 [![Code Climate](https://codeclimate.com/github/ysugimoto/aws-lambda-image/badges/gpa.svg)](https://codeclimate.com/github/ysugimoto/aws-lambda-image)
 [![Coverage Status](https://coveralls.io/repos/github/ysugimoto/aws-lambda-image/badge.svg?branch=master)](https://coveralls.io/github/ysugimoto/aws-lambda-image?branch=master)
