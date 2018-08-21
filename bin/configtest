@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
+var configfile = process.argv.slice(2);
 var path       = require("path");
 var fs         = require("fs");
-var configPath = path.resolve(__dirname, "../config.json");
+var configPath = path.resolve(__dirname, "../config/" + configfile + ".json");
 var projectDir = path.resolve(__dirname, "..");
 var warning    = [];
 var fatals     = [];
