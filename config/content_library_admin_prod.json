@@ -1,0 +1,17 @@
+{
+  "bucket": "techgc-public",
+  "resizes": [
+    {
+      "size": 100,
+      "keepExtension": true,
+      "acl": "public-read",
+      "directory": "./tn"
+    },
+    {
+      "size": 1200,
+      "keepExtension": true,
+      "acl": "public-read",
+      "directory": "./middle"
+    }
+  ]
+}
