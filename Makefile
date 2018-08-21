@@ -1,7 +1,7 @@
 .PHONY: clean configtest
 
 lambda:
-    npm install .
+    @npm install .
     @echo "Factory package files..."
     @if [ ! -d build ] ;then mkdir build; fi
     @if [ ! -d upload ] ;then mkdir upload; fi
