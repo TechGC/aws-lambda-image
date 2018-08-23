@@ -71,8 +71,8 @@ while [ opt != '' ]
 
         3) clear;
            option_picked "techgc-public/content-library-admin-staging";
-           make TARGET=content_library_admin_prod FUNCTION=prodContentLibraryAdminConverter configtest && \
-           make TARGET=content_library_admin_prod FUNCTION=prodContentLibraryAdminConverter uploadlambda;
+           make TARGET=content_library_admin_staging FUNCTION=stagingContentLibraryAdminConverter configtest && \
+           make TARGET=content_library_admin_staging FUNCTION=stagingContentLibraryAdminConverter uploadlambda;
            exit;
             ;;
 
