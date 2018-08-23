@@ -34,6 +34,7 @@ show_menu(){
     echo -e "${GREEN_TEXT}Choose Lambda configuration target:${NORMAL}\n"
     echo -e "${MENU}**${NUMBER} 1)${MENU} techgc-public/content-library-admin-dev ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 2)${MENU} techgc-public/content-library-admin-prod ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 3)${MENU} techgc-public/content-library-admin-staging ${NORMAL}"
     echo -e "\n${MENU}**${NUMBER} 0)${MENU} Clean up bundle files & node_modules. ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit. ${NORMAL}"
@@ -50,7 +51,7 @@ clear
 show_menu
 while [ opt != '' ]
     do
-      if [[ $opt = "" ]]; then 
+      if [[ $opt = "" ]]; then
             exit;
     else
         case $opt in
@@ -63,6 +64,13 @@ while [ opt != '' ]
 
         2) clear;
            option_picked "techgc-public/content-library-admin-prod";
+           make TARGET=content_library_admin_prod FUNCTION=prodContentLibraryAdminConverter configtest && \
+           make TARGET=content_library_admin_prod FUNCTION=prodContentLibraryAdminConverter uploadlambda;
+           exit;
+            ;;
+
+        3) clear;
+           option_picked "techgc-public/content-library-admin-staging";
            make TARGET=content_library_admin_prod FUNCTION=prodContentLibraryAdminConverter configtest && \
            make TARGET=content_library_admin_prod FUNCTION=prodContentLibraryAdminConverter uploadlambda;
            exit;
